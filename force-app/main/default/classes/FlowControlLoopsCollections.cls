@@ -106,7 +106,13 @@ public with sharing class FlowControlLoopsCollections {
      * @return A string indicating whether the number is "Even" or "Odd", or null if the number is null.
      */
     public static String checkEvenOdd(Integer a) {
-        return null; // Replace null with the variable you used to store the result
+        if (a == null){
+            return null;
+        }else if (Math.mod(a,2) == 0){
+            return 'Even';
+        }else {
+            return 'Odd';
+        }
     }
 
     /**
@@ -117,9 +123,16 @@ public with sharing class FlowControlLoopsCollections {
      * @return A string indicating whether the input is "Empty", "Null", or "Contains Text".
      */
     public static String checkString(String a) {
-        return null; // Replace null with the variable you used to store the result
-    }
+            if(a == null){
+                return 'Null';
+            }else if (a == ''){
+                return 'Empty';
+            }else {
+                return 'Contains Text';
+               }
 
+            }
+        
     /**
      * Question 7
      * Determines the grade based on the score.
@@ -133,7 +146,18 @@ public with sharing class FlowControlLoopsCollections {
      * @return The grade for the given score.
      */
     public static String determineGrade(Integer score) {
-        return null; // Replace null with the variable you used to store the result
+        if(score >= 90){
+            return 'A';
+        } else if (score >= 80){
+            return 'B';
+        } else if (score >= 70){
+            return 'C';
+        } else if (score >= 60){
+            return 'D';
+        }else {
+            return 'F';
+        }
+         // Replace null with the variable you used to store the result
     }
 
 
@@ -150,8 +174,11 @@ public with sharing class FlowControlLoopsCollections {
             
          }
         */
-
-        return null; // Replace null with the variable you used to store the result
+        Integer sum = 0;
+        for(Integer i = 1; i <= intLimit; i++){
+            sum = sum + i;
+        }
+       return sum; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -169,8 +196,12 @@ public with sharing class FlowControlLoopsCollections {
             
          }
         */
-
-        return null; // Replace null with the variable you used to store the result
+        String greetings = 'Hello World!; ';
+          for (Integer i = 1 ; i<3 ; i++)
+          {
+            greetings +='Hello World!; ';   
+        }
+        return greetings; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -195,7 +226,15 @@ public with sharing class FlowControlLoopsCollections {
         */
 
         // Return the final result string
-        return null; // Replace null with the variable you used to store the result
+        String greetings = '';
+            for (Integer i = 1 ; i <= repeatCount ; i++)
+            {
+               greetings += inputString;
+               if(i < repeatCount){
+                    greetings += '; ';
+               }
+        }
+        return greetings; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -213,7 +252,13 @@ public with sharing class FlowControlLoopsCollections {
         // add 3
 
         // Return the populated list
-        return null; // Replace null with the variable you used to store the result
+        List<Integer> expectedList = new List<Integer>();
+
+        expectedList.add(1);
+        expectedList.add(2);
+        expectedList.add(3);
+
+        return expectedList; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -229,7 +274,16 @@ public with sharing class FlowControlLoopsCollections {
         // Remove the 3rd element (number 3) from the list
         
         // Return the updated list
-        return null; // Replace null with the variable you used to store the result
+        List<Integer> expectedList = new List<Integer>();
+
+            expectedList.add(1);
+            expectedList.add(2);
+            expectedList.add(3);
+            expectedList.add(4);
+            expectedList.add(5);      
+            expectedList.remove(2);
+
+        return expectedList; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -247,8 +301,12 @@ public with sharing class FlowControlLoopsCollections {
             //add integer to the list
         }
         */ 
-
-        return null; // Replace null with the variable you used to store the result
+            List<Integer> expectedList = new List<Integer>();
+            
+        for(Integer i = 1; i <= n; i++){
+            expectedList.add(i);
+        }
+        return expectedList; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -261,11 +319,11 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static Set<String> createStringSet(List<String> inputList) {
         // Create a new Set of strings
-        Set<String> stringSet = new Set<String>();
-
-        //add strings to the set
-
-        return null; // Replace null with the variable you used to store the result
+        
+        Set<String> stringSet = new Set<String>(inputList);
+       
+  //add strings to the set
+          return stringSet; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -276,12 +334,16 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static Integer sumPositiveIntegers() {
         List<Integer> numbers = new List<Integer>{-1, 2, -3, 4, -5, 6}; //DO NOT CHANGE
-
+            Integer expectedSum = 0;
         // Loop through the list of integers
+        for(Integer num : numbers){
+                if( num < 0 ){
+                    continue;
+                }
+                expectedSum += num;
+        }
             // if the number is negative skip this iteration
-        
-
-        return null; // Replace null with the variable you used to store the result
+        return expectedSum; // Replace null with the variable you used to store the result
     }
 
     /**
