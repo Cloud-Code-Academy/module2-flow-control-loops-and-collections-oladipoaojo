@@ -25,7 +25,7 @@ System.debug('My name is ' + tempvar);
         // add Alice Johnson => 65000
 
         // Get the salary of the employee
-        for(String employee : employeeSalaries){
+        for(String employee : employeeSalaries.keySet()){
             salary = employeeSalaries.get(employee);
             System.debug('The salary of ' + employee + ' is ' + salary);
 
